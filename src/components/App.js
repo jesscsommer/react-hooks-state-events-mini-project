@@ -14,10 +14,16 @@ function App() {
     setTasks(tasks.filter(task => task.text !== taskToDeleteText))
   }
 
+  const [selectedCategory, setSelectedCategory] = useState('All')
+
+  const changeCategory = (newCat) => { 
+    setSelectedCategory(newCat)
+  }
+
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter />
+      <CategoryFilter categories={CATEGORIES} changeCategory={changeCategory} selectedCategory={selectedCategory} />
       <NewTaskForm />
       <TaskList tasks={tasks} removeTask={removeTask} />
     </div>
