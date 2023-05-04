@@ -14,9 +14,8 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
-  const removeTask = (taskToDelete) => {
-    console.log(taskToDelete)
-    setTasks(tasks.filter(task => task !== taskToDelete))
+  const removeTask = (taskToDeleteText) => {
+    setTasks(tasks.filter(task => task.text !== taskToDeleteText))
   }
 
   const [selectedCategory, setSelectedCategory] = useState('All')
