@@ -4,7 +4,7 @@ import Task from './Task'
 function TaskList({ tasks, removeTask }) {
   return (
     <div className="tasks">
-      {tasks.map(task => <Task key={task.text} {...task} removeTask={removeTask} />)}
+      {tasks.map(task => <Task key={task.text} task={task} removeTask={removeTask} />)}
     </div>
   );
 }
